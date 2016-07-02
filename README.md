@@ -7,14 +7,17 @@ We are using [Middleman](https://middlemanapp.com/) to generate static HTML and 
 
 1. You need Ruby (2.3.0 would be perfect.)
 2. You need Bundler:
+
 ```
 gem install bundler
 ```
 3. You need to bundle.
+
 ```
 bundle install
 ```
 4. Then you can proceed to start Middleman server.
+
 ```
 middleman server
 ```
@@ -22,6 +25,7 @@ middleman server
 ### Building up (generating static files)
 1. Everything from _Development, testing_ category is required.
 2. Generate static files.
+
 ```
 middleman build
 ```
