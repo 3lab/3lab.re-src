@@ -16,7 +16,7 @@ module Projects
     end
   end
 
-  def Projects.hash_to_project(projecthash)
+  def Projects.from_hash(projecthash)
     Project.new(
         name: projecthash['name'],
         description: projecthash['description'],
@@ -29,7 +29,7 @@ module Projects
     projects_arr = []
     path = File.dirname(__FILE__).split('/')[0..-3].join('/') + '/source/projects/*.yml'
     Dir[path].each do |project_path|
-      projects_arr << Projects.hash_to_project((YAML.load_file(project_path)))
+      projects_arr << Projects.from_hash((YAML.load_file(project_path)))
     end
     self.list = projects_arr
   end

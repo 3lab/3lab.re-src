@@ -17,7 +17,7 @@ module Members
     end
   end
 
-  def Members.hash_to_member(memberhash)
+  def Members.from_hash(memberhash)
     Member.new(
       username: memberhash['username'],
       description: memberhash['description'],
@@ -31,7 +31,7 @@ module Members
     members_arr = []
     path = File.dirname(__FILE__).split('/')[0..-3].join('/') + '/source/members/*.yml'
     Dir[path].each do |member_path|
-      members_arr << Members.hash_to_member((YAML.load_file(member_path)))
+      members_arr << Members.from_hash((YAML.load_file(member_path)))
     end
     self.list = members_arr
   end
