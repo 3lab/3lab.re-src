@@ -1,5 +1,6 @@
 3lab.re homepage
 ==============
+
 ### About
 We are using [Middleman](https://middlemanapp.com/) to generate static HTML and CSS, however the site itself is written in **erb**, **Ruby** (and enhanced with couple of gems you can see in the **Gemfile**).
 
