@@ -1,3 +1,14 @@
+require_relative 'lib/boot'
+
+helpers do
+  def projects
+    Projects.list
+  end
+  def members
+    Members.list
+  end
+end
+
 ###
 # Page options, layouts, aliases and proxies
 ###
