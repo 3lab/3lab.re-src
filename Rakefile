@@ -68,7 +68,11 @@ task :add_member do
 end
 
 task :add_project do
-
+  say "<%= color('3lab - Add Project', BOLD, UNDERLINE) %>"
+  @name = ask 'Name: '
+  @description = ask 'Description: '
+  @link = ask 'Live (demo): '
+  @source = ask('Source: '){ |q| q.default "http://git.3lab.re/3lab/#{@name}"}
 end
 
 task :create_article do
