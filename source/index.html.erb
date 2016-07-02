@@ -1,22 +1,22 @@
 ---
-title: napij się herbaty
+title: Napij się herbaty
 ---
 <header id="top">
   <h1><span>3</span>lab</h1>
-  <h2>Our motto? Yes.</h2>
+  <h2>Tak.</h2>
 </header>
 <div id="content">
   <section id="about" class="max">
-    <h1>About us <a href="#">&raquo;</a></h1>
+    <h1>O nas <a href="#">&raquo;</a></h1>
     <p>
-      We are group of programmers, gamers, hobbyists and - mainly - hacktivists, who enjoy making things easier. All (or at least the most) of us are Poles.
+      Jesteśmy zgrają programistów, hobbistów, graczy, a głównie - haktywistów, którzy lubią majsterkować, upraszczać sobie i innym życie, ale także gadać o niczym, śmieszkować i robić inby. Jesteśmy z Polski.
     </p>
   </section>
   <section id="projects">
-    <h1>Projects <a href="#">&raquo;</a></h1>
-    <% @projects.each do |project| %>
+    <h1>Nasze <a href="#">&raquo;</a></h1>
+    <% projects.each do |project| %>
         <ul>
-          <li><a href="<%= project.reference %>">
+          <li><a href="<%= project.link %>">
             <%= image_tag("#{project.name}.png", :class => "thumb")  %>
             <h1><%= project.name %></h1>
             <p><%= project.description %></p>
@@ -25,26 +25,24 @@ title: napij się herbaty
     <% end %>
   </section>
   <section id="members">
-    <h1>Members <a href="#">&raquo;</a></h1>
+    <h1>My <a href="#">&raquo;</a></h1>
     <ul>
-      <% @members.each do |member| %>
-          <a href="<%= member.homepage %>"><li>
-            <% if File.exists?("#{@image_path}#{member.username}.png") %>
-                <%= image_tag("#{member.username}.png", :class => "thumb") %>
-            <% else %>
-                <%= puts("No image available in #{@image_path}#{member.username}.png") %>
-            <% end %>
+      <% members.each do |member| %>
+          <a href="<%= member.homepage %>">
+            <li>
+            <%= image_tag "#{member.username}.png", :class => 'thumb' %>
             <h1>~<%= member.username %></h1>
             <p><%= member.description %></p></a>
-          </li></a>
+            </li>
+          </a>
       <% end %>
     </ul>
   </section>
   <section id="smth" class="max">
-    <h1>What can we offer <a href="#">&raquo;</a></h1>
-    <p>Starting on great people, finishing on having fun with Rails!</p>
+    <h1>Co możemy zaoferować? <a href="#">&raquo;</a></h1>
+    <p>Znamy różne technologie, rózne rozwiązania. Nie udajemy profesjonalistów, jesteśmy po prostu ludźmi z internetu. Chętnie pogadamy, chętnie przejrzymy kod. Nie bój się zagadać ;-)!</p>
   </section>
 </div>
 <footer>
-  Design made by one of our mates, Kadet. If any issues occur, contact #3lab at irc.Freenode.net
+  &laquo;Kontakt: <a rel="nofollow" target="_blank" href="https://webchat.freenode.net/?channels=#3lab">#<strong>3lab</strong></a>&raquo; &laquo; <a href="http://git.3lab.re/3lab/3lab.re"><strong>Źródło</strong></a> &raquo; &laquo; <a href="http://git.3lab.re/"><strong>Git</strong></a> &raquo;
 </footer>

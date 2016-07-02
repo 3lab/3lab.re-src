@@ -4,12 +4,11 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-    <title><%= current_page.data.title || 'Middleman' %></title>
-
+    <title><%= current_page.data.title ? ( '3lab: ' + current_page.data.title ) : ('3lab') %></title>
+    <%= favicon_tag 'images/favicon.ico' %>
     <%= stylesheet_link_tag :style %>
     <%= javascript_include_tag :all %>
   </head>
-
   <body class="<%= page_classes %>">
     <%= yield %>
   </body>
