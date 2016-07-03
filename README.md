@@ -32,4 +32,3 @@ middleman build
 ```
 
 3. Static files can be found in `build/` directory.
-
