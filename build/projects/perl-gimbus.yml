@@ -1,0 +1,4 @@
+name: perl-gimbus
+link: http://git.3lab.re/3lab/gimbus-perl
+source: http://git.3lab.re/3lab/gimbus-perl
+description: Implementacja API Gimb.us w Perlu.
