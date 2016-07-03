@@ -28,7 +28,7 @@ module Projects
   def Projects.load_projects
     projects_arr = []
     path = File.dirname(__FILE__).split('/')[0..-3].join('/') + '/source/projects/*.yml'
-    Dir[path].each do |project_path|
+    Dir[path].sort.each do |project_path|
       projects_arr << Projects.from_hash((YAML.load_file(project_path)))
     end
     self.list = projects_arr
