@@ -1,41 +1,52 @@
 ---
 title: Napij się herbaty
 ---
-<div id="content">
-  <section id="about" class="max">
-    <h1>O nas <a href="#">&raquo;</a></h1>
-    <p>
-      Jesteśmy zgrają programistów, hobbistów, graczy, a głównie - haktywistów, którzy lubią majsterkować, upraszczać sobie i innym życie, ale także gadać o niczym, śmieszkować i robić inby. Jesteśmy z Polski.
-    </p>
-  </section>
-  <section id="projects">
-    <h1>Nasze <a href="#">&raquo;</a></h1>
-    <% projects.each do |project| %>
-        <ul>
-          <li><a href="<%= project.link %>">
-            <%= image_tag("#{project.name}.png", :class => "thumb")  %>
-            <h1><%= project.name %></h1>
-            <p><%= project.description %></p>
-          </a></li>
-        </ul>
-    <% end %>
-  </section>
-  <section id="members">
-    <h1>My <a href="#">&raquo;</a></h1>
-    <ul>
-      <% members.each do |member| %>
-          <a href="<%= member.homepage %>">
+<div id="content" class="container">
+  <div class="row">
+    <section id="about" class="col-lg-12">
+      <h1>O nas</h1>
+      <p>
+        Jesteśmy zgrają programistów, hobbistów, graczy, a głównie - haktywistów, którzy lubią majsterkować, upraszczać sobie i innym życie, ale także gadać o niczym, śmieszkować i robić inby. Jesteśmy z Polski.
+      </p>
+    </section>
+  </div>
+  <div class="row">
+    <section id="projects" class="col-sm-12 col-md-6">
+      <h1>Nasze</h1>
+      <% projects.each do |project| %>
+          <ul>
             <li>
-            <%= image_tag "#{member.username}.png", :class => 'thumb' %>
-            <h1>~<%= member.username %></h1>
-            <p><%= member.description %></p></a>
+              <a href="<%= project.link %>" class="project">
+                <span class="thumb" style="background-image: url('<%= image_path "#{project.name}.png" %>')">
+                  <span class="description">
+                    <span class="title"><%= project.name %></span>
+                    <%= project.description %>
+                  </span>
+                </span>
+              </a>
             </li>
-          </a>
+          </ul>
       <% end %>
-    </ul>
-  </section>
-  <section id="smth" class="max">
-    <h1>Co możemy zaoferować? <a href="#">&raquo;</a></h1>
-    <p>Znamy różne technologie, rózne rozwiązania. Nie udajemy profesjonalistów, jesteśmy po prostu ludźmi z internetu. Chętnie pogadamy, chętnie przejrzymy kod. Nie bój się zagadać ;-)!</p>
-  </section>
+    </section>
+    <section id="members" class="col-sm-12 col-md-6">
+      <h1>My</h1>
+      <ul>
+        <% members.each do |member| %>
+              <li>
+                <a href="<%= member.homepage %>" class="member">
+                  <%= image_tag "#{member.username}.png", :class => 'avatar' %>
+                  <span class="title">~<%= member.username %></span>
+                  <span class="description"><%= member.description %></span>
+                </a>
+              </li>
+        <% end %>
+      </ul>
+    </section>
+  </div>
+  <div class="row">
+    <section id="smth" class="col-lg-12">
+      <h1>Co możemy zaoferować?</h1>
+      <p>Znamy różne technologie, rózne rozwiązania. Nie udajemy profesjonalistów, jesteśmy po prostu ludźmi z internetu. Chętnie pogadamy, chętnie przejrzymy kod. Nie bój się zagadać ;-)!</p>
+    </section>
+  </div>
 </div>
