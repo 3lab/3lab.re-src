@@ -1,6 +1,6 @@
 // Font loading
-@import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext);
+@import url(//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext);
 
 @import 'grid.scss';
 @import 'font-awesome.min.css';
@@ -134,6 +134,7 @@ section > h1 {
 }
 
 section ul li {
+    position: relative;
     list-style: none;
 }
 
@@ -146,27 +147,31 @@ section ul li {
         display: block;
     }
 
-    li {
-        position: relative;
+    li .actions {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: table;
 
-        .actions {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: table;
+        background: $accent;
+        color: $foreground;
+        border: 1px darken($accent, 10%) solid;
+        border-bottom-width: 3px;
 
-            background: $accent;
-            color: $foreground;
-            border: 1px darken($accent, 10%) solid;
-            border-bottom-width: 3px;
+        a { 
+            display: table-cell;
+            padding: 5px;
+            text-align: center;
+            text-transform: lowercase;
 
-            a { 
-                display: table-cell;
-                padding: 5px;
-                text-align: center;
-                text-transform: lowercase;
+            font-weight: 500;
 
-                font-weight: 500;
+            &:hover {
+                background: lighten($accent, 5%);
+            }
+
+            &:active {
+                background: darken($accent, 5%);
             }
         }
     }
@@ -214,28 +219,54 @@ section ul li {
     }
 }
 
-#members a.member {
-    display: block;
-    overflow: hidden;
+#members {
+    .actions {
+        text-align: right;
 
-    &:hover .avatar {
-        transform: rotate(-5deg);
+        a {
+            color: $accent;
+            margin-right: 10px;
+        }
     }
 
-    .avatar {
-        width: 100px;
-        height: 100px;
-        margin-right: 10px;
-        float: left;
-        transition: 150ms ease-in-out;        
+    .repositories {
+        display: none;
+        padding: 10px 0;
+
+        li {
+            margin-left: 20px;
+            padding: 3px;
+
+            font-weight: 500;
+            color: $accent;
+        }
     }
 
-    .title {
-        color: $accent;
-        font-size: 18pt;
-        text-align: left;
+    a.member {
         display: block;
-        font-weight: 500;
+        overflow: hidden;
+
+        &:hover .avatar {
+            transform: rotate(-5deg);
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            float: left;
+            transition: 150ms ease-in-out;        
+        }
+
+        .title {
+            color: $accent;
+            font-size: 18pt;
+            text-align: left;
+            display: block;
+            font-weight: 500;
+        }
+
+        
     }
 }
 
