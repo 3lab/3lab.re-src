@@ -13,6 +13,8 @@ end
 # Page options, layouts, aliases and proxies
 ###
 
+activate :sprockets
+
 # Per-page layout changes:
 #
 # With no layout
