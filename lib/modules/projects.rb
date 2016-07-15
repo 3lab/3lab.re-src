@@ -11,8 +11,8 @@ module Projects
     def initialize(params = {})
       @name = params.fetch(:name, 'unknown')
       @description = params.fetch(:description, nil)
-      @link = params.fetch(:link, 'http://git.3lab.re/' + @name)
-      @source = params.fetch(:repositories, 'http://git.3lab.re/' + @name)
+      @link = params.fetch(:link, nil)
+      @source = params.fetch(:source, nil)
     end
   end
 

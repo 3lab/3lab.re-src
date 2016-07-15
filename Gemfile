@@ -16,3 +16,11 @@ gem 'middleman-sprockets', '~> 4.0.0.rc.1'
 
 # jQuery
 gem 'jquery-middleman'
+
+# Rake Tasks
+gem 'rake'
+gem 'highline'
+gem 'image_optimizer'
+gem 'mini_magick'
+gem 'unidecoder'
+gem 'digest'
