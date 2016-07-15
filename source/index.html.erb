@@ -60,13 +60,21 @@ title: Napij się herbaty
     $('#members-slider').lightSlider({ 
       vertical: true,
       verticalHeight: 400,
-      item: 3
+      item: 3,        
+      loop: true,
+      slideMove: 3,
+      easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+      speed:600
     });
 
     $('#project-slider').lightSlider({ 
       vertical: true,
       verticalHeight: 378,
-      item: 2
+      item: 2,      
+      loop: true,
+      slideMove: 2,
+      easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+      speed:600
     });
   });
 </script>
