@@ -16,14 +16,18 @@ title: Napij się herbaty
       <ul id="project-slider">
       <% projects.each do |project| %>
         <li>
-          <a href="<%= project.link %>" class="project">
+          <div class="project">
             <span class="thumb" style="background-image: url('<%= image_path "#{project.name}.png" %>')">
               <span class="description">
                 <span class="title"><%= project.name %></span>
                 <%= project.description %>
               </span>
             </span>
-          </a>
+          </div>
+          <div class="actions">
+            <% if project.link %><a href="<%= project.link %>"><i class="fa fa-eye"></i> Demo</a><% end %>
+            <% if project.source %><a href="<%= project.source %>"><i class="fa fa-code"></i> Źródło</a><% end %>
+          </div>
         </li>
       <% end %>
       </ul>

@@ -146,6 +146,31 @@ section ul li {
         display: block;
     }
 
+    li {
+        position: relative;
+
+        .actions {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: table;
+
+            background: $accent;
+            color: $foreground;
+            border: 1px darken($accent, 10%) solid;
+            border-bottom-width: 3px;
+
+            a { 
+                display: table-cell;
+                padding: 5px;
+                text-align: center;
+                text-transform: lowercase;
+
+                font-weight: 500;
+            }
+        }
+    }
+
     .thumb {
         display: table;
 
