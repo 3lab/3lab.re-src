@@ -13,24 +13,24 @@ title: Napij się herbaty
   <div class="row">
     <section id="projects" class="col-sm-12 col-md-6">
       <h1>Nasze</h1>
+      <ul id="project-slider">
       <% projects.each do |project| %>
-          <ul>
-            <li>
-              <a href="<%= project.link %>" class="project">
-                <span class="thumb" style="background-image: url('<%= image_path "#{project.name}.png" %>')">
-                  <span class="description">
-                    <span class="title"><%= project.name %></span>
-                    <%= project.description %>
-                  </span>
-                </span>
-              </a>
-            </li>
-          </ul>
+        <li>
+          <a href="<%= project.link %>" class="project">
+            <span class="thumb" style="background-image: url('<%= image_path "#{project.name}.png" %>')">
+              <span class="description">
+                <span class="title"><%= project.name %></span>
+                <%= project.description %>
+              </span>
+            </span>
+          </a>
+        </li>
       <% end %>
+      </ul>
     </section>
     <section id="members" class="col-sm-12 col-md-6">
       <h1>My</h1>
-      <ul>
+      <ul id="members-slider">
         <% members.each do |member| %>
               <li>
                 <a href="<%= member.homepage %>" class="member">
@@ -50,3 +50,19 @@ title: Napij się herbaty
     </section>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $('#members-slider').lightSlider({ 
+      vertical: true,
+      verticalHeight: 400,
+      item: 3
+    });
+
+    $('#project-slider').lightSlider({ 
+      vertical: true,
+      verticalHeight: 378,
+      item: 2
+    });
+  });
+</script>

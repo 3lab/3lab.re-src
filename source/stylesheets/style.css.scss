@@ -4,6 +4,7 @@
 
 @import 'grid.scss';
 @import 'font-awesome.min.css';
+@import 'lightslider.min.css';
 
 // Colors
 $background: #181818;
@@ -26,7 +27,7 @@ a {
 
 html {
     background:  $background url('../images/background.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 
     color:       $foreground;
@@ -34,7 +35,7 @@ html {
 }
 
 body {
-    padding: 50px;
+    padding: 25px;
     padding-bottom: 0;
     font-size: 12pt;
     font-weight: 300;
@@ -116,6 +117,8 @@ section > h1 {
     font-weight: 400;
     color: $accent;
 
+    margin-bottom: 10px;
+
     position: relative;
 
     a {
@@ -135,12 +138,11 @@ section ul li {
 }
 
 .row {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #projects {
     a.project {
-        margin-bottom: 20px;
         display: block;
     }
 
@@ -190,7 +192,6 @@ section ul li {
 #members a.member {
     display: block;
     overflow: hidden;
-    padding: 10px 0;
 
     &:hover .avatar {
         transform: rotate(-5deg);
@@ -215,7 +216,7 @@ section ul li {
 
 footer {
     color: $foreground;
-    margin: 0 -50px;
+    margin: 0 -25px;
 	clear: both;
     font-weight: 500;
     height: 75px;
@@ -229,8 +230,12 @@ footer {
         font-weight: 700;
     }
 
-    background:  $background url('../images/footer.png');
+    background: $background url('../images/footer.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
+}
+
+.lSSlideOuter .lSPager.lSpg > li.active a, .lSSlideOuter .lSPager.lSpg > li:hover a {
+    background: $accent;
 }
