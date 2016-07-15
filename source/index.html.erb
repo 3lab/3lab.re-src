@@ -48,8 +48,8 @@ title: Napij się herbaty
                   <% end %>
                 </ul>
                 <div class="actions">
-                  <% if member.mail %><a href="#"><i class="fa fa-envelope"></i> <%= member.mail %></i></a><% end %>                  
-                  <% if member.homepage %><a href="<%= member.homepage %>"><i class="fa fa-globe"></i> <%= member.homepage.gsub(/https?:\/\/(.*?)\//, '\1') %></i></a><% end %>                  
+                  <% if member.mail %><a href="#"><i class="fa fa-envelope"></i> <%= member.mail %></a><% end %>                  
+                  <% if member.homepage %><a href="<%= member.homepage %>"><i class="fa fa-globe"></i> <%= member.homepage.gsub(/https?:\/\/(.*?)\//, '\1') %></a><% end %>                  
                   <a href="#" class="repo-toggle"><i class="fa fa-code"></i> Kod <i class="toggle fa fa-chevron-down"></i></a>                                        
                 </div>
               </li>
@@ -74,13 +74,12 @@ title: Napij się herbaty
       $members.goToSlide($(this).index() - 2);
       $members.pause();
 
-      $(this).toggleClass('repos-shown', true);
-
-      $(this).css('min-height', $(this).css('height'));
-      $(this).css('height', 'auto');      
+      $(this).toggleClass('repos-shown', true).css({
+        'min-height': $(this).css('height'),
+        'height':     'auto'
+      });      
 
       $(this).find('.repositories').slideDown();
-
       $(this).find('.toggle').toggleClass('fa-chevron-down', false).toggleClass('fa-chevron-up', true)
     };
 
@@ -95,14 +94,6 @@ title: Napij się herbaty
       $members.play();
       $members.goToPrevSlide();
     }
-
-    $('#members .repo-toggle').click(function() {
-      var show = !$(this).parent().parent().hasClass('repos-shown');
-      $('.repos-shown').hideRepos();
-      if(show) {
-        $(this).parent().parent().showRepos();
-      }
-    });
 
     $members.lightSlider({ 
       vertical: true,
@@ -128,6 +119,22 @@ title: Napij się herbaty
       auto: true,
       pause: 4000,
       pauseOnHover: true,
+      onSliderLoad: function() {
+        $('#members .repo-toggle').click(function() {
+          $element = $(this).parent().parent();
+          if($element.hasClass('clone') && $element.hasClass('right')) {
+            $element = $('#members .lslide').eq($element.index('#members-slider .clone.right'));
+          }
+
+          var show = !$element.hasClass('repos-shown');
+          $('.repos-shown').hideRepos();
+          if(show) {
+            $element.showRepos();
+          }
+
+          $('.lSPager a').click(function() { $('.repos-shown').hideRepos(); })
+        });
+      }
     });
   });
 </script>
