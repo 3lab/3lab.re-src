@@ -6,7 +6,7 @@
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
     <title>3lab: Napij się herbaty</title>
     <link href="/images/favicon.ico" rel="icon" type="image/ico" />
-    <link href="/stylesheets/style-b66f2348.css" rel="stylesheet" />
+    <link href="/stylesheets/style-2f4e6f5c.css" rel="stylesheet" />
     <script src="/javascripts/all-306ccec7.js"></script>
   </head>
 
@@ -117,6 +117,15 @@
                   <span class="title">~aseeon</span>
                   <span class="description">Pythonista</span>
                 </a>
+                <ul class="repositories">
+                    <li><a href="http://git.3lab.re/aseeon"><i class="fa fa-code"></i> http://git.3lab.re/aseeon</a></li>
+                    <li><a href=" http://github.com/aseeon"><i class="fa fa-code"></i>  http://github.com/aseeon</a></li>
+                </ul>
+                <div class="actions">
+                  <a href="#"><i class="fa fa-envelope"></i> aseeon@gmail.com</a>
+                  <a href="http://aseeon.net/"><i class="fa fa-globe"></i> aseeon.net</a>
+                  <a href="#" class="repo-toggle"><i class="fa fa-code"></i> Kod <i class="toggle fa fa-chevron-down"></i></a>
+                </div>
               </li>
               <li>
                 <a href="http://irth.pl/" class="member" target="_blank">
@@ -124,6 +133,15 @@
                   <span class="title">~irth</span>
                   <span class="description"></span>
                 </a>
+                <ul class="repositories">
+                    <li><a href="http://git.3lab.re/irth"><i class="fa fa-code"></i> http://git.3lab.re/irth</a></li>
+                    <li><a href=" http://github.com/irth"><i class="fa fa-code"></i>  http://github.com/irth</a></li>
+                </ul>
+                <div class="actions">
+                  <a href="#"><i class="fa fa-envelope"></i> me@irth.pl</a>
+                  <a href="http://irth.pl/"><i class="fa fa-globe"></i> irth.pl</a>
+                  <a href="#" class="repo-toggle"><i class="fa fa-code"></i> Kod <i class="toggle fa fa-chevron-down"></i></a>
+                </div>
               </li>
               <li>
                 <a href="http://3lab.info/" class="member" target="_blank">
@@ -131,6 +149,14 @@
                   <span class="title">~kocio</span>
                   <span class="description">blah</span>
                 </a>
+                <ul class="repositories">
+                    <li><a href="http://git.3lab.re/kocio"><i class="fa fa-code"></i> http://git.3lab.re/kocio</a></li>
+                </ul>
+                <div class="actions">
+                  <a href="#"><i class="fa fa-envelope"></i> duzemaile@gmail.com</a>
+                  <a href="http://3lab.info/"><i class="fa fa-globe"></i> 3lab.info</a>
+                  <a href="#" class="repo-toggle"><i class="fa fa-code"></i> Kod <i class="toggle fa fa-chevron-down"></i></a>
+                </div>
               </li>
               <li>
                 <a href="http://marahin.pl/" class="member" target="_blank">
@@ -138,6 +164,15 @@
                   <span class="title">~marahin</span>
                   <span class="description">Ruby, Linux, games. I also like blarghing, watching movies and watching people hack.</span>
                 </a>
+                <ul class="repositories">
+                    <li><a href="http://git.3lab.re/marahin"><i class="fa fa-code"></i> http://git.3lab.re/marahin</a></li>
+                    <li><a href=" http://github.com/3labMarahin"><i class="fa fa-code"></i>  http://github.com/3labMarahin</a></li>
+                </ul>
+                <div class="actions">
+                  <a href="#"><i class="fa fa-envelope"></i> me@marahin.pl</a>
+                  <a href="http://marahin.pl/"><i class="fa fa-globe"></i> marahin.pl</a>
+                  <a href="#" class="repo-toggle"><i class="fa fa-code"></i> Kod <i class="toggle fa fa-chevron-down"></i></a>
+                </div>
               </li>
               <li>
                 <a href="" class="member" target="_blank">
@@ -145,6 +180,15 @@
                   <span class="title">~pietra</span>
                   <span class="description">Only the dead fish flow with the current.</span>
                 </a>
+                <ul class="repositories">
+                    <li><a href="http://git.3lab.re/pietra"><i class="fa fa-code"></i> http://git.3lab.re/pietra</a></li>
+                    <li><a href=" http://github.com/pietra"><i class="fa fa-code"></i>  http://github.com/pietra</a></li>
+                </ul>
+                <div class="actions">
+                  
+                  
+                  <a href="#" class="repo-toggle"><i class="fa fa-code"></i> Kod <i class="toggle fa fa-chevron-down"></i></a>
+                </div>
               </li>
               <li>
                 <a href="http://3lab.re/" class="member" target="_blank">
@@ -152,6 +196,15 @@
                   <span class="title">~xaxes</span>
                   <span class="description">┐('～`；)┌</span>
                 </a>
+                <ul class="repositories">
+                    <li><a href="http://git.3lab.re/xaxes"><i class="fa fa-code"></i> http://git.3lab.re/xaxes</a></li>
+                    <li><a href=" http://github.com/xaxes"><i class="fa fa-code"></i>  http://github.com/xaxes</a></li>
+                </ul>
+                <div class="actions">
+                  <a href="#"><i class="fa fa-envelope"></i> xaxees@gmail.com</a>
+                  <a href="http://3lab.re/"><i class="fa fa-globe"></i> 3lab.re</a>
+                  <a href="#" class="repo-toggle"><i class="fa fa-code"></i> Kod <i class="toggle fa fa-chevron-down"></i></a>
+                </div>
               </li>
       </ul>
     </section>
@@ -166,7 +219,35 @@
 
 <script>
   $(document).ready(function () {
-    $('#members-slider').lightSlider({ 
+    var $projects = $('#project-slider');
+    var $members  = $('#members-slider');
+
+    $.fn.showRepos = function() {
+      $members.goToSlide($(this).index() - 2);
+      $members.pause();
+
+      $(this).toggleClass('repos-shown', true).css({
+        'min-height': $(this).css('height'),
+        'height':     'auto'
+      });
+
+      $(this).find('.repositories').slideDown();
+      $(this).find('.toggle').toggleClass('fa-chevron-down', false).toggleClass('fa-chevron-up', true)
+    };
+
+    $.fn.hideRepos = function() {
+      $(this).toggleClass('repos-shown', false);
+      $(this).find('.repositories').slideUp();
+
+      $(this).css('height', $(this).css('min-height'));
+
+      $(this).find('.toggle').toggleClass('fa-chevron-down', true).toggleClass('fa-chevron-up', false);
+
+      $members.play();
+      $members.goToPrevSlide();
+    }
+
+    $members.lightSlider({
       vertical: true,
       verticalHeight: 400,
       item: 3,        
@@ -179,9 +260,9 @@
       pauseOnHover: true,
     });
 
-    $('#project-slider').lightSlider({ 
+    $projects.lightSlider({
       vertical: true,
-      verticalHeight: 378,
+      verticalHeight: 400,
       item: 2,      
       loop: true,
       slideMove: 2,
@@ -190,6 +271,22 @@
       auto: true,
       pause: 4000,
       pauseOnHover: true,
+      onSliderLoad: function() {
+        $('#members .repo-toggle').click(function() {
+          $element = $(this).parent().parent();
+          if($element.hasClass('clone') && $element.hasClass('right')) {
+            $element = $('#members .lslide').eq($element.index('#members-slider .clone.right'));
+          }
+
+          var show = !$element.hasClass('repos-shown');
+          $('.repos-shown').hideRepos();
+          if(show) {
+            $element.showRepos();
+          }
+
+          $('.lSPager a').click(function() { $('.repos-shown').hideRepos(); })
+        });
+      }
     });
   });
 </script>
