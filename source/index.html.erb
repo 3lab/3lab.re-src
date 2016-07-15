@@ -25,8 +25,8 @@ title: Napij się herbaty
             </span>
           </div>
           <div class="actions">
-            <% if project.link %><a href="<%= project.link %>"><i class="fa fa-eye"></i> Demo</a><% end %>
-            <% if project.source %><a href="<%= project.source %>"><i class="fa fa-code"></i> Źródło</a><% end %>
+            <% if project.link %><a href="<%= project.link %>" target="_blank"><i class="fa fa-eye"></i> Demo</a><% end %>
+            <% if project.source %><a href="<%= project.source %>" target="_blank"><i class="fa fa-code"></i> Źródło</a><% end %>
           </div>
         </li>
       <% end %>
@@ -37,7 +37,7 @@ title: Napij się herbaty
       <ul id="members-slider">
         <% members.each do |member| %>
               <li>
-                <a href="<%= member.homepage %>" class="member">
+                <a href="<%= member.homepage %>" class="member" target="_blank">
                   <%= image_tag "#{member.username}.png", :class => 'avatar' %>
                   <span class="title">~<%= member.username %></span>
                   <span class="description"><%= member.description %></span>
