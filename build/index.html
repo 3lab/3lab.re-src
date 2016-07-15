@@ -61,7 +61,7 @@
           </div>
           <div class="actions">
             <a href="http://gimb.us/"><i class="fa fa-eye"></i> Demo</a>
-            <a href="http://penis"><i class="fa fa-code"></i> Źródło</a>
+            <a href="http://git.3lab.re/3lab/gimb.us"><i class="fa fa-code"></i> Źródło</a>
           </div>
         </li>
         <li>
@@ -74,7 +74,7 @@
             </span>
           </div>
           <div class="actions">
-            <a href="http://git.3lab.re/3lab/pygimb"><i class="fa fa-eye"></i> Demo</a>
+            
             <a href="http://git.3lab.re/3lab/PyGimb"><i class="fa fa-code"></i> Źródło</a>
           </div>
         </li>
@@ -88,7 +88,7 @@
             </span>
           </div>
           <div class="actions">
-            <a href="http://git.3lab.re/3lab/gimbus-perl"><i class="fa fa-eye"></i> Demo</a>
+            
             <a href="http://git.3lab.re/3lab/gimbus-perl"><i class="fa fa-code"></i> Źródło</a>
           </div>
         </li>
@@ -155,13 +155,27 @@
     $('#members-slider').lightSlider({ 
       vertical: true,
       verticalHeight: 400,
-      item: 3
+      item: 3,        
+      loop: true,
+      slideMove: 3,
+      easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+      speed:800,
+      pause: 4500,
+      auto: true,
+      pauseOnHover: true,
     });
 
     $('#project-slider').lightSlider({ 
       vertical: true,
       verticalHeight: 378,
-      item: 2
+      item: 2,      
+      loop: true,
+      slideMove: 2,
+      easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+      speed:800,
+      auto: true,
+      pause: 4000,
+      pauseOnHover: true,
     });
   });
 </script>
