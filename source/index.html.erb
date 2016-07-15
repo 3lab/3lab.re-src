@@ -42,6 +42,16 @@ title: Napij się herbaty
                   <span class="title">~<%= member.username %></span>
                   <span class="description"><%= member.description %></span>
                 </a>
+                <ul class="repositories">
+                  <% member.repositories.each do |repo| %>
+                    <li><a href="<%= repo %>"><i class="fa fa-code"></i> <%= repo %></a></li>
+                  <% end %>
+                </ul>
+                <div class="actions">
+                  <% if member.mail %><a href="#"><i class="fa fa-envelope"></i> <%= member.mail %></i></a><% end %>                  
+                  <% if member.homepage %><a href="<%= member.homepage %>"><i class="fa fa-globe"></i> <%= member.homepage.gsub(/https?:\/\/(.*?)\//, '\1') %></i></a><% end %>                  
+                  <a href="#" class="repo-toggle"><i class="fa fa-code"></i> Kod <i class="toggle fa fa-chevron-down"></i></a>                                        
+                </div>
               </li>
         <% end %>
       </ul>
@@ -57,7 +67,44 @@ title: Napij się herbaty
 
 <script>
   $(document).ready(function () {
-    $('#members-slider').lightSlider({ 
+    var $projects = $('#project-slider');
+    var $members  = $('#members-slider');
+
+    $.fn.showRepos = function() {
+      $members.goToSlide($(this).index() - 2);
+      $members.pause();
+
+      $(this).toggleClass('repos-shown', true);
+
+      $(this).css('min-height', $(this).css('height'));
+      $(this).css('height', 'auto');      
+
+      $(this).find('.repositories').slideDown();
+
+      $(this).find('.toggle').toggleClass('fa-chevron-down', false).toggleClass('fa-chevron-up', true)
+    };
+
+    $.fn.hideRepos = function() {
+      $(this).toggleClass('repos-shown', false);
+      $(this).find('.repositories').slideUp();
+      
+      $(this).css('height', $(this).css('min-height'));
+
+      $(this).find('.toggle').toggleClass('fa-chevron-down', true).toggleClass('fa-chevron-up', false);
+
+      $members.play();
+      $members.goToPrevSlide();
+    }
+
+    $('#members .repo-toggle').click(function() {
+      var show = !$(this).parent().parent().hasClass('repos-shown');
+      $('.repos-shown').hideRepos();
+      if(show) {
+        $(this).parent().parent().showRepos();
+      }
+    });
+
+    $members.lightSlider({ 
       vertical: true,
       verticalHeight: 400,
       item: 3,        
@@ -70,9 +117,9 @@ title: Napij się herbaty
       pauseOnHover: true,
     });
 
-    $('#project-slider').lightSlider({ 
+    $projects.lightSlider({ 
       vertical: true,
-      verticalHeight: 378,
+      verticalHeight: 400,
       item: 2,      
       loop: true,
       slideMove: 2,
