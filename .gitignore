@@ -16,3 +16,6 @@
 
 # Ignore JetBrains IDE
 .idea
+
+# Build folder
+build
